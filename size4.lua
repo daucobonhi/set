@@ -107,8 +107,8 @@ local function MakeDraggable(topbarobject, object)
 	CustomSize(object)
 	CustomPos(topbarobject, object)
 end
-local WazureV1 = {}
-function WazureV1:Notify(NotifyConfig)
+local MatsuneHub = {}
+function MatsuneHub:Notify(NotifyConfig)
 	local NotifyConfig = NotifyConfig or {}
 	NotifyConfig.Title = NotifyConfig.Title or "Alert"
 	NotifyConfig.Content = NotifyConfig.Content or "Content"
@@ -304,7 +304,7 @@ function WazureV1:Notify(NotifyConfig)
 	end)
 	return NotifyFunc
 end
-function WazureV1:Start(GuiConfig)
+function MatsuneHub:Start(GuiConfig)
 	local GuiConfig = GuiConfig or {}
 	GuiConfig.Name = GuiConfig.Name or "W-azure"
 	GuiConfig["Logo Player"] = GuiConfig["Logo Player"] or "https://www.roblox.com/headshot-thumbnail/image?userId="..game:GetService("Players").LocalPlayer.UserId .."&width=420&height=420&format=png"
@@ -452,10 +452,10 @@ function WazureV1:Start(GuiConfig)
 	UICorner2.Parent = Top
 	
 	MakeDraggable(Top, Main)
-	function WazureV1:CloseUI()
+	function MatsuneHub:CloseUI()
 		AzuGui:Destroy()
 	end
-	function WazureV1:ToggleUI()
+	function MatsuneHub:ToggleUI()
 		Main.Visible = not Main.Visible
 	end
 
@@ -530,7 +530,7 @@ ImageButton.MouseButton1Click:Connect(function()
     clickSound.Parent = SoundService
     clickSound:Play()
     
-    WazureV1:ToggleUI()
+    MatsuneHub:ToggleUI()
 	GuiConfig.CloseCallBack()
 end)
 	
@@ -2507,4 +2507,4 @@ end)
 	end
 	return Tabs
 end
-return WazureV1
+return MatsuneHub
