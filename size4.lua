@@ -806,7 +806,7 @@ end)
 	local Tabs = {}
 	local CountTab = 0
 	local CountSetting = 0
-	function Tabs:MakeTab(TabName)
+	function Tabs:Tab(TabName)
 		local TabName = TabName or ""
 		
 		local ScrollLayers = Instance.new("ScrollingFrame");
